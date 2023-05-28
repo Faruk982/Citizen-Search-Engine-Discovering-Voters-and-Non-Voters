@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1685260653 source:d:\algorithm\voting survey\main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<bits/stdc++.h>
-	<vector>
-
