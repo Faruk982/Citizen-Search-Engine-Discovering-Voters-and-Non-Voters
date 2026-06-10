@@ -2,24 +2,21 @@
 
 This project is a small C++ citizen search engine that reads records from `input.txt`, classifies each person as a voter or non-voter based on date of birth, and lets the user list records or search for a specific profile from the command line.
 
-## What Changed
+## Project Overview
 
-The project is now structured around real OOP responsibilities instead of keeping all logic inside `main()`.
+This project is a C++ citizen search engine that reads records from `input.txt`, classifies each person as a voter or non-voter based on age, and lets the user list records or search for a specific profile from the command line.
 
-- `Person` is an abstract base class that encapsulates the common citizen data.
-- `Voter` and `NonVoter` inherit from `Person` and override the polymorphic display behavior.
-- `CitizenRegistry` owns the collection of records, file loading, filtering, counting, and search.
-- The `<<` operator works through the `Person` interface, so output is handled polymorphically.
+The program stores all citizens in one collection, then uses runtime type behavior to print and filter them as needed. It supports three list modes: all citizens, only voters, and only non-voters.
 
-## OOP Principles Used
+## OOP Concepts Used
 
-Encapsulation: citizen fields stay private inside `Person`, and access happens through controlled methods.
+Encapsulation: the common citizen details are kept inside the `Person` base class and accessed through member functions.
 
-Inheritance: `Voter` and `NonVoter` reuse the shared state and behavior from `Person`.
+Inheritance: `Voter` and `NonVoter` both derive from `Person` and reuse the shared data and behavior.
 
-Polymorphism: the program stores records through `unique_ptr<Person>` and prints them through virtual functions.
+Polymorphism: the program stores citizens as `unique_ptr<Person>` and uses virtual functions so each derived type can provide its own label and display behavior.
 
-Abstraction: the registry hides the storage and lookup details behind a small interface.
+Abstraction: `CitizenRegistry` hides file loading, searching, counting, and filtering behind a simple interface.
 
 ## Features
 
